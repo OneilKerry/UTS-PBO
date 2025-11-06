@@ -3,17 +3,21 @@ class Cuti {
     this.nama = nama;
   }
 
+  // template
   maxHari() {
-    return 12;
+    return 0;
   }
 
-
   ajukanCuti(name, jumlahHari) {
-     if (this.maxHari() < jumlahHari ) {
-         console.log(`Pengajuan atas nama ${name} ${this.nama} selama ${jumlahHari} hari disetujui`);
-        } else {
-            console.log(`Pengajuan atas nama ${name} ditolak! Maksimal ${this.nama} adalah ${this.maxHari()} hari`);
-        }
+    if (jumlahHari > this.maxHari()) {
+      console.log(
+        `Pengajuan atas nama ${name} ditolak! Maksimal ${this.nama} adalah ${this.maxHari()} hari`
+      );
+    } else {
+      console.log(
+        `Pengajuan atas nama ${name} ${this.nama} selama ${jumlahHari} hari disetujui`
+      );
+    }
   }
 }
 
@@ -45,7 +49,7 @@ class CutiMelahirkan extends Cuti {
 }
 //yg bener
 const karywan = new CutiTahunan();
-karywan.ajukanCuti("budi", 13);  
+karywan.ajukanCuti("budi", 12);  
 
 const karywan1 = new CutiSakit();
 karywan1.ajukanCuti("Andi",2); 
@@ -58,10 +62,10 @@ const karywan3 = new CutiTahunan();
 karywan.ajukanCuti("Jaky",13);  
 
 const karywan4 = new CutiSakit();
-karywan1.ajukanCuti(4); 
+karywan1.ajukanCuti("salah",4); 
 
 const karywan5 = new CutiMelahirkan();
-karywan2.ajukanCuti(95); 
+karywan2.ajukanCuti("romero",95); 
 
 
 
