@@ -1,29 +1,24 @@
 class Cuti {
-  constructor(nama) {
-    this.nama = nama;
+  constructor(name) {
+    this.name = name;
   }
 
-  // template
   maxHari() {
     return 0;
   }
 
-  ajukanCuti(name, jumlahHari) {
+  ajukanCuti(namaKaryawan, jumlahHari) {
     if (jumlahHari > this.maxHari()) {
-      console.log(
-        `Pengajuan atas nama ${name} ditolak! Maksimal ${this.nama} adalah ${this.maxHari()} hari`
-      );
+      console.log(`Pengajuan atas nama ${namaKaryawan} ditolak! Maksimal ${this.name} adalah ${this.maxHari()} hari`);
     } else {
-      console.log(
-        `Pengajuan atas nama ${name} ${this.nama} selama ${jumlahHari} hari disetujui`
-      );
+      console.log(`Pengajuan atas nama ${namaKaryawan} ${this.nama} selama ${jumlahHari} hari disetujui`);
     }
   }
 }
 
 class CutiTahunan extends Cuti {
-  constructor(name) {
-    super(name = "Cuti Tahunan");
+  constructor() {
+    super("Cuti Tahunan");
   }
   maxHari() {
     return 12;
@@ -31,8 +26,8 @@ class CutiTahunan extends Cuti {
 }
 
 class CutiSakit extends Cuti {
-  constructor(name) {
-    super(name = "Cuti Sakit");
+  constructor() {
+    super("Cuti Sakit");
   }
   maxHari() {
     return 2;
@@ -40,13 +35,14 @@ class CutiSakit extends Cuti {
 }
 
 class CutiMelahirkan extends Cuti {
-  constructor(name) {
-    super(name= "Cuti Melahirkan");
+  constructor() {
+    super("Cuti Melahirkan");
   }
   maxHari() {
     return 90;
   }
 }
+
 //yg bener
 const karywan = new CutiTahunan();
 karywan.ajukanCuti("budi", 12);  
@@ -59,13 +55,13 @@ karywan2.ajukanCuti("Andi",45);
 
 //yg salah
 const karywan3 = new CutiTahunan();
-karywan.ajukanCuti("Jaky",13);  
+karywan3.ajukanCuti("Jaky",13);  
 
 const karywan4 = new CutiSakit();
-karywan1.ajukanCuti("salah",4); 
+karywan4.ajukanCuti("Joko",4); 
 
 const karywan5 = new CutiMelahirkan();
-karywan2.ajukanCuti("romero",95); 
+karywan5.ajukanCuti("romero",95); 
 
 
 
